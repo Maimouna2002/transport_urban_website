@@ -23,7 +23,8 @@
           <div class="card">
               <div class="card-body">
                   <h6 class="card-title"><i class='bx bx-briefcase'></i> Agence </h6>
-                  <p class="card-text text-primary"></p>
+                  <p class="card-text text-warning">{{ app('App\Http\Controllers\Admin\CompanyController')->count() }}</p>
+
               </div>
           </div>
       </div>

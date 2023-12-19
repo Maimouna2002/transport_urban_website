@@ -16,8 +16,8 @@
           "slug": "dashboard-analytics"
         },
         {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/dashboard/crm",
-          "name": "Agence",
+          "url": "/companies",
+          "name": "compagnies",
           "slug": "dashboard-crm",
           "target": "_blank",
           "badge": [
