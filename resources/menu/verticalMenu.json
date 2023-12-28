@@ -16,9 +16,9 @@
           "slug": "dashboard-analytics"
         },
         {
-          "url": "/companies",
-          "name": "compagnies",
-          "slug": "dashboard-crm",
+          "url": "/transports",
+          "name": "Transports",
+          "slug": "app-academy-dashboard",
           "target": "_blank",
           "badge": [
             "label-primary fs-tiny",
@@ -26,13 +26,33 @@
           ]
         },
         {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/app/academy/dashboard",
-          "name": "Itineraire",
+          "url": "/companies",
+          "name": "Compagnies",
           "slug": "app-academy-dashboard",
           "target": "_blank",
           "badge": [
             "label-primary fs-tiny",
             "5"
+          ]
+        },
+        {
+          "url": "/itineraries",
+          "name": "Itinéraires",
+          "slug": "app-academy-dashboard",
+          "target": "_blank",
+          "badge": [
+            "label-primary fs-tiny",
+            "6"
+          ]
+        },
+        {
+          "url": "/stops",
+          "name": "Arrets",
+          "slug": "app-academy-dashboard",
+          "target": "_blank",
+          "badge": [
+            "label-primary fs-tiny",
+            ""
           ]
         }
       ]
