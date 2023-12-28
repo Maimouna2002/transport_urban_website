@@ -1,13 +1,13 @@
 @extends('layouts.contentNavbarLayout')
 
-@section('title', 'Compagnie')
+@section('title', 'Transport')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Créer une compagnie</div>
+                    <div class="card-header">Créer un transport</div>
 
                     <div class="card-body">
                         @if ($errors->any())
@@ -20,23 +20,14 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="{{ route('companies.store') }}">
+                        <form method="POST" action="{{ route('transports.store') }}">
                             @csrf
 
                             <div class="form-group">
-                                <label for="name">Nom :</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <label for="nom">Nom :</label>
+                                <input type="text" class="form-control" id="nom" name="nom" required>
                             </div>
 
-                            <div class="form-group">
-                                <label for="localisation">Localisation :</label>
-                                <input type="text" class="form-control" id="localisation" name="localisation" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="contact">Contact :</label>
-                                <input type="text" class="form-control" id="contact" name="contact" required>
-                            </div>
                             <div class="form-group">
                               <label for="status">Statut :</label>
                               <select name="status" id="status" class="form-control" required>
@@ -46,13 +37,10 @@
                           </div>
 
                             <div class="form-group">
-                              <label for="itinerary_id">Itinéraires :</label>
-                              <select name="itinerary_id[]" id="itinerary_id" class="form-control" multiple required>
-                                    @foreach($itineraries as $itinerary)
-                                        <option value="{{ $itinerary->id }}"
-                                            {{ (is_array(old('itineraries')) && in_array($itinerary->id, old('itineraries'))) ? 'selected' : '' }}>
-                                            {{ $itinerary->departure_point }} - {{ $itinerary->arrival_point }}
-                                        </option>
+                                <label for="company_id">Compagnie :</label>
+                                <select class="form-control" id="company_id" name="company_id" required>
+                                    @foreach ($companies as $company)
+                                        <option value="{{ $company->id }}">{{ $company->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

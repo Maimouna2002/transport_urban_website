@@ -50,6 +50,10 @@ $controller_path = 'App\Http\Controllers';
 // Main Page Route
 Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
 Route::resource('companies', $controller_path . '\Admin\CompanyController');
+Route::resource('transports', $controller_path . '\Admin\TransportController');
+Route::resource('itineraries', $controller_path . '\Admin\ItineraryController');
+Route::resource('stops', $controller_path . '\Admin\StopController');
+
 // layout
 Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layouts-without-menu');
 Route::get('/layouts/without-navbar', [WithoutNavbar::class, 'index'])->name('layouts-without-navbar');
