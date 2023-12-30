@@ -1,6 +1,6 @@
 @extends('layouts.contentNavbarLayout')
 
-@section('title', 'Modifier l\'itinéraire')
+@section('title', 'Modifier un itinéraire')
 
 @section('content')
     <div class="container">
@@ -35,26 +35,33 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="stop_id">Arrêts :</label>
-                                <select class="form-control" id="stop_id" name="stop_id[]" multiple>
-                                    @foreach ($stops as $stop)
-                                        <option value="{{ $stop->id }}" @if(in_array($stop->id, $selectedStops)) selected @endif>{{ $stop->name }}</option>
+                                <label for="stops">Arrêts :</label>
+                                <select name="stop_id[]" id="stop_id" class="form-control" multiple required>
+                                    @foreach($stops as $stop)
+                                        <option value="{{ $stop->id }}"
+                                            {{ (is_array(old('stop_id', $itinerary->stops->pluck('id')->toArray())) && in_array($stop->id, old('stop_id', $itinerary->stops->pluck('id')->toArray()))) ? 'selected' : '' }}>
+                                            {{ $stop->name }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="company_id">Compagnies :</label>
-                                <select class="form-control" id="company_id" name="company_id[]" multiple>
-                                    @foreach ($companies as $company)
-                                        <option value="{{ $company->id }}" @if(in_array($company->id, $selectedCompanies)) selected @endif>{{ $company->name }}</option>
+                                <label for="schedules">Horaires :</label>
+                                <select name="schedule_id[]" id="schedule_id" class="form-control" multiple required>
+                                    @foreach($schedules as $schedule)
+                                        <option value="{{ $schedule->id }}"
+                                            {{ (is_array(old('schedule_id', $itinerary->schedules->pluck('id')->toArray())) && in_array($schedule->id, old('schedule_id', $itinerary->schedules->pluck('id')->toArray()))) ? 'selected' : '' }}>
+                                            {{ $schedule->departure_time }}
+                                            {{ $schedule->arrival_time }}
+                                        </option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <br>
 
-                            <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                            <button type="submit" class="btn btn-primary">Modifier</button>
                         </form>
                     </div>
                 </div>

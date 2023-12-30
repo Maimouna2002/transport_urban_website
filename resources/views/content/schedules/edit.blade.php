@@ -1,13 +1,15 @@
+<!-- resources/views/content/schedules/edit.blade.php -->
+
 @extends('layouts.contentNavbarLayout')
 
-@section('title', 'Arrêt')
+@section('title', 'Modifier un horaire')
 
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Créer un arrêt</div>
+                    <div class="card-header">Modifier un horaire</div>
 
                     <div class="card-body">
                         @if ($errors->any())
@@ -20,25 +22,23 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="{{ route('stops.store') }}">
+                        <form method="POST" action="{{ route('schedules.update', $schedule->id) }}">
                             @csrf
+                            @method('PUT')
 
                             <div class="form-group">
-                                <label for="name">Nom :</label>
-                                <input type="text" class="form-control" id="name" name="name" required>
+                                <label for="departure_time">Heure de départ :</label>
+                                <input type="time" class="form-control" id="departure_time" name="departure_time" value="{{ old('departure_time', $schedule->departure_time) }}" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="status">Statut :</label>
-                                <select name="status" id="status" class="form-control" required>
-                                    <option value="active">Actif</option>
-                                    <option value="inactive">Inactif</option>
-                                </select>
+                                <label for="arrival_time">Heure d'arrivée :</label>
+                                <input type="time" class="form-control" id="arrival_time" name="arrival_time" value="{{ old('arrival_time', $schedule->arrival_time) }}" required>
                             </div>
 
                             <br>
 
-                            <button type="submit" class="btn btn-primary">Créer</button>
+                            <button type="submit" class="btn btn-primary">Modifier</button>
                         </form>
                     </div>
                 </div>

@@ -25,8 +25,8 @@
                             @method('PUT')
 
                             <div class="form-group">
-                                <label for="nom">Nom :</label>
-                                <input type="text" class="form-control" id="nom" name="nom" value="{{ $transport->nom }}" required>
+                                <label for="name">Nom :</label>
+                                <input type="text" class="form-control" id="name" name="name" value="{{ $transport->name }}" required>
                             </div>
 
                             <div class="form-group">

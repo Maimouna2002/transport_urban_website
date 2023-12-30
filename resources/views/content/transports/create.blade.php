@@ -1,6 +1,6 @@
 @extends('layouts.contentNavbarLayout')
 
-@section('title', 'Transport')
+@section('title', 'Créer un transport')
 
 @section('content')
     <div class="container">
@@ -24,24 +24,24 @@
                             @csrf
 
                             <div class="form-group">
-                                <label for="nom">Nom :</label>
-                                <input type="text" class="form-control" id="nom" name="nom" required>
+                                <label for="name">Nom :</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
                             </div>
 
                             <div class="form-group">
-                              <label for="status">Statut :</label>
-                              <select name="status" id="status" class="form-control" required>
-                                  <option value="active">Actif</option>
-                                  <option value="inactive">Inactif</option>
-                              </select>
-                          </div>
-
-                            <div class="form-group">
                                 <label for="company_id">Compagnie :</label>
-                                <select class="form-control" id="company_id" name="company_id" required>
+                                <select name="company_id" id="company_id" class="form-control" required>
                                     @foreach ($companies as $company)
                                         <option value="{{ $company->id }}">{{ $company->name }}</option>
                                     @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="status">Statut :</label>
+                                <select name="status" id="status" class="form-control" required>
+                                    <option value="active">Actif</option>
+                                    <option value="inactive">Inactif</option>
                                 </select>
                             </div>
 

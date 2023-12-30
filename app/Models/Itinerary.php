@@ -16,8 +16,14 @@ class Itinerary extends Model
     {
         return $this->belongsToMany(Company::class);
     }
+
     public function stops()
     {
         return $this->belongsToMany(Stop::class);
+    }
+
+    public function schedules()
+    {
+        return $this->belongsToMany(Schedule::class);
     }
 }
