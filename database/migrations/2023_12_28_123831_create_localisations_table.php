@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inerary_sop', function (Blueprint $table) {
+        Schema::create('localisations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('stop_id');
-            $table->funsignedBigInteger('itinerary_id');
             $table->timestamps();
-
-            $table->foreign('stop_id')->references('id')->on('stops')->onDelete('cascade');
-            $table->foreign('itinerary_id')->references('id')->on('itineraries')->onDelete('cascade');
         });
     }
 
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('itinerary_stop');
+        Schema::dropIfExists('localisations');
     }
 };

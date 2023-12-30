@@ -1,6 +1,6 @@
 @extends('layouts.contentNavbarLayout')
 
-@section('title', 'Créer un itinéraire')
+@section('title', 'Itinéraire')
 
 @section('content')
     <div class="container">
@@ -34,12 +34,25 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="stop_id">Arrêts :</label>
+                                <label for="stops">Arrêts :</label>
                                 <select name="stop_id[]" id="stop_id" class="form-control" multiple required>
                                     @foreach($stops as $stop)
                                         <option value="{{ $stop->id }}"
                                             {{ (is_array(old('stops')) && in_array($stop->id, old('stops'))) ? 'selected' : '' }}>
                                             {{ $stop->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="schedules_">Horaires :</label>
+                                <select name="schedule_id[]" id="schedule_id" class="form-control" multiple required>
+                                    @foreach($schedules as $schedule)
+                                        <option value="{{ $schedule->id }}"
+                                            {{ (is_array(old('schedules')) && in_array($schedule->id, old('schedules'))) ? 'selected' : '' }}>
+                                            {{ $schedule->departure_time }}
+                                            {{ $schedule->arrival_time }}
                                         </option>
                                     @endforeach
                                 </select>

@@ -53,6 +53,8 @@ Route::resource('companies', $controller_path . '\Admin\CompanyController');
 Route::resource('transports', $controller_path . '\Admin\TransportController');
 Route::resource('itineraries', $controller_path . '\Admin\ItineraryController');
 Route::resource('stops', $controller_path . '\Admin\StopController');
+Route::resource('schedules', $controller_path . '\Admin\ScheduleController');
+
 
 // layout
 Route::get('/layouts/without-menu', [WithoutMenu::class, 'index'])->name('layouts-without-menu');

@@ -37,13 +37,6 @@
                                 <label for="contact">Contact :</label>
                                 <input type="text" class="form-control" id="contact" name="contact" required>
                             </div>
-                            <div class="form-group">
-                              <label for="status">Statut :</label>
-                              <select name="status" id="status" class="form-control" required>
-                                  <option value="active">Actif</option>
-                                  <option value="inactive">Inactif</option>
-                              </select>
-                          </div>
 
                             <div class="form-group">
                               <label for="itinerary_id">Itinéraires :</label>
@@ -57,6 +50,13 @@
                                 </select>
                             </div>
 
+                            <div class="form-group">
+                              <label for="status">Statut :</label>
+                              <select name="status" id="status" class="form-control" required>
+                                  <option value="active">Actif</option>
+                                  <option value="inactive">Inactif</option>
+                              </select>
+                          </div>
                             <br>
 
                             <button type="submit" class="btn btn-primary">Créer</button>

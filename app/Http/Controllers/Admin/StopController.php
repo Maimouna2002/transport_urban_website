@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Itinerary;
 use App\Models\Stop;
 
+
 class StopController extends Controller
 {
     public function create()
@@ -20,21 +21,19 @@ class StopController extends Controller
     {
         $stop = new Stop();
         $stop->name = $request->name;
-        // Ajoutez d'autres champs de la table 'stop' selon votre structure
-
+        $stop->status = $request->status ?? 'active';
         $stop->save();
 
         // Attachez des itinéraires à cet arrêt
         $stop->itineraries()->attach($request->input('itinerary_id', []));
 
-        return redirect()->route('stops.index')->withSuccess(__('Nouvel arrêt ajouté avec succès.'));
+        return redirect()->route('stops.index')->withSuccess(__('Nouvel arrêt ajouté avec succès.'))->with('stopName', $stop->name);
     }
 
     public function update(Request $request, Stop $stop)
     {
         $stop->name = $request->name;
-        // Mettez à jour d'autres champs de la table 'stop' selon votre structure
-
+        $stop->status = $request->status ?? 'active';
         $stop->save();
 
         // Mettez à jour les itinéraires liés à cet arrêt
