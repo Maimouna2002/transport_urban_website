@@ -48,7 +48,10 @@ $controller_path = 'App\Http\Controllers';
 
 
 // Main Page Route
-Route::get('/', [Analytics::class, 'index'])->name('dashboard-analytics');
+Route::get('/', function(){
+    return view('accueil');
+});
+Route::get('/dashboard', [Analytics::class, 'index'])->name('dashboard-analytics');
 Route::resource('companies', $controller_path . '\Admin\CompanyController');
 Route::resource('transports', $controller_path . '\Admin\TransportController');
 Route::resource('itineraries', $controller_path . '\Admin\ItineraryController');
