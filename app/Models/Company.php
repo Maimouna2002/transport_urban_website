@@ -15,4 +15,5 @@ class Company extends Model
     {
         return $this->belongsToMany(Itinerary::class);
     }
+
 }

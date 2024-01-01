@@ -31,8 +31,10 @@
                                             <td>{{ $transport->name }}</td>
                                             <td>
                                               @if ($transport->companies)
-                                                  {{ $transport->companies->name }}
-                                              @endif
+    @foreach ($transport->companies as $company)
+        {{ $company->name }}
+    @endforeach
+@endif
                                           </td>
                                             <td>
                                                 <div class="d-flex">

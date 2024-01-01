@@ -29,12 +29,12 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="company_id">Compagnie :</label>
-                                <select name="company_id" id="company_id" class="form-control" required>
-                                    @foreach ($companies as $company)
-                                        <option value="{{ $company->id }}">{{ $company->name }}</option>
-                                    @endforeach
-                                </select>
+                                <label for="company_id">Compagnies :</label>
+                                <select name="companies[]" multiple>
+                                  @foreach($companies as $company)
+                                      <option value="{{ $company->id }}">{{ $company->name }}</option>
+                                  @endforeach
+                              </select>
                             </div>
 
                             <div class="form-group">

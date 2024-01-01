@@ -11,7 +11,7 @@ class TransportController extends Controller
 {
   public function index()
   {
-      $transports = Transport::with('company')->orderBy('id', 'desc')->get();
+      $transports = Transport::with('companies')->orderBy('id', 'desc')->get();
 
       return view('content.transports.index', compact('transports'));
   }

@@ -11,7 +11,7 @@ class Transport extends Model
 
     protected $fillable = ['name', 'status', 'company_id'];
 
-    public function company()
+    public function companies()
     {
         return $this->belongsTo(Company::class);
     }
