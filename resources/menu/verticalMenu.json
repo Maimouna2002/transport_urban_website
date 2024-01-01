@@ -38,92 +38,18 @@
       ]
     },
     {
-      "name": "Front Pages",
-      "icon": "menu-icon tf-icons bx bx-store",
-      "slug": "front-pages",
-      "badge": [
-        "label-primary fs-tiny",
-        "Pro"
-      ],
-      "submenu": [
-        {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/landing",
-          "name": "Landing",
-          "slug": "front-pages-landing",
-          "target": "_blank"
-        },
-        {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/pricing",
-          "name": "Pricing",
-          "slug": "front-pages-pricing",
-          "target": "_blank"
-        },
-        {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/payment",
-          "name": "Payment",
-          "slug": "front-pages-payment",
-          "target": "_blank"
-        },
-        {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/checkout",
-          "name": "Checkout",
-          "slug": "front-pages-checkout",
-          "target": "_blank"
-        },
-        {
-          "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/front-pages/help-center",
-          "name": "Help Center",
-          "slug": "front-pages-help-center",
-          "target": "_blank"
-        }
-      ]
-    },
-    {
-      "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/app/chat",
-      "name": "Chat",
-      "icon": "menu-icon tf-icons bx bx-chat",
-      "slug": "app-chat",
-      "target": "_blank",
-      "badge": [
-        "label-primary fs-tiny",
-        "Pro"
-      ]
-    },
-    {
-      "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/app/calendar",
-      "name": "Calendar",
-      "icon": "menu-icon tf-icons bx bx-calendar",
-      "slug": "app-calendar",
-      "target": "_blank",
-      "badge": [
-        "label-primary fs-tiny",
-        "Pro"
-      ]
-    },
-    {
-      "url": "https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/app/kanban",
-      "name": "Kanban",
-      "icon": "menu-icon tf-icons bx bx-grid",
-      "slug": "app-kanban",
-      "target": "_blank",
-      "badge": [
-        "label-primary fs-tiny",
-        "Pro"
-      ]
-    },
-    {
-      "name": "Account Settings",
+      "name": "gestion des comptes",
       "icon": "menu-icon tf-icons bx bx bx-dock-top",
       "slug": "pages-account-settings",
       "submenu": [
         {
           "url": "pages/account-settings-account",
-          "name": "Account",
+          "name": "Utilisateurs",
           "slug": "pages-account-settings-account"
         },
         {
-          "url": "pages/account-settings-notifications",
-          "name": "Notifications",
+          "url": "/roles",
+          "name": "Roles",
           "slug": "pages-account-settings-notifications"
         },
         {
@@ -153,6 +79,56 @@
         {
           "url": "auth/forgot-password-basic",
           "name": "Forgot Password",
+          "slug": "auth-forgot-password-basic",
+          "target": "_blank"
+        }
+      ]
+    },
+    {
+      "menuHeader": "Pages"
+    },
+    {
+      "name": "Paramètres du compte",
+      "icon": "menu-icon tf-icons bx bx-user-circle",
+      "slug": "pages-account-settings",
+      "submenu": [
+        {
+          "url": "/pages/account-settings-account",
+          "name": "Compte",
+          "slug": "pages-account-settings-account"
+        },
+        {
+          "url": "/pages/account-settings-notifications",
+          "name": "Notifications",
+          "slug": "pages-account-settings-notifications"
+        },
+        {
+          "url": "/pages/account-settings-connections",
+          "name": "Connexions",
+          "slug": "pages-account-settings-connections"
+        }
+      ]
+    },
+    {
+      "name": "Authentifications",
+      "icon": "menu-icon tf-icons bx bx-lock-open",
+      "slug": "auth",
+      "submenu": [
+        {
+          "url": "/auth/login-basic",
+          "name": "Se connecter",
+          "slug": "login",
+          "target": "_blank"
+        },
+        {
+          "url": "/auth/register-basic",
+          "name": "S'inscrire",
+          "slug": "register-post",
+          "target": "_blank"
+        },
+        {
+          "url": "/auth/forgot-password-basic",
+          "name": "Mot de passe oublié",
           "slug": "auth-forgot-password-basic",
           "target": "_blank"
         }

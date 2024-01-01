@@ -31,7 +31,7 @@
                                     <td>{{ $company->localisation }}</td>
                                     <td>{{ $company->contact }}</td>
                                     <td>{{ $company->status }}</td>
-                                    <td>
+                                    <td >
                                         <a href="{{ route('companies.edit', $company->id) }}" class="btn btn-secondary"><i class='bx bx-edit'></i></a>
                                         <form action="{{ route('companies.destroy', $company->id) }}" method="POST" style="display: inline-block;">
                                             @csrf
