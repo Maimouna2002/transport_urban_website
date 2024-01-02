@@ -13,6 +13,8 @@ Route::post('/auth/login-basic', [LoginBasic::class, 'login'])->name('login-post
 
 Route::get('/auth/register-basic', [RegisterBasic::class, 'register'])->name('register');
 Route::post('/auth/register-basic', $controller_path . '\Authentications\RegisterBasic@processRegistration')->name('register-post');
+// Main Page Route
+
 
 Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
 
@@ -39,6 +41,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/auth/get-username', $controller_path . '\Authentications\LoginBasic@getUsername')->name('get-username');
 
     Route::resource('companies', $controller_path . '\Admin\CompanyController');
+    Route::resource('transports', $controller_path . '\Admin\TransportController');
+    Route::resource('itineraries', $controller_path . '\Admin\ItineraryController');
+    Route::resource('stops', $controller_path . '\Admin\StopController');
+    Route::resource('schedules', $controller_path . '\Admin\ScheduleController');
+
 
 
 

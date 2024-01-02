@@ -22,8 +22,9 @@
       <div class="col-md-4">
           <div class="card">
               <div class="card-body">
-                  <h6 class="card-title"><i class='bx bx-briefcase'></i> Agence </h6>
-                  <p class="card-text text-warning">{{ app('App\Http\Controllers\Admin\CompanyController')->count() }}</p>
+                <i class="bx bx-file text-warning" style="font-size: 25px; color: blue; margin-right: 5px;"></i> Compagnies </h6>
+                  <p class="card-text text-warning text-center" style="font-size: 32px; color: blue; font-weight: bold;">
+                    {{ app('App\Http\Controllers\Admin\CompanyController')->count() }}</p>
 
               </div>
           </div>
@@ -31,15 +32,19 @@
       <div class="col-md-4">
           <div class="card">
               <div class="card-body">
-                  <h6 class="card-title"><i class='bx bx-file'></i> Trajet</h6>
+                  <i class="bx bx-file text-warning" style="font-size: 25px; color: blue; margin-right: 5px;"></i> Itineraires </h6>
+                  <p class="card-text text-warning text-center" style="font-size: 32px; color: blue; font-weight: bold;">
+                    {{ app('App\Http\Controllers\Admin\ItineraryController')->count() }}
+                </p>
+                </p>
               </div>
           </div>
       </div>
       <div class="col-md-4">
           <div class="card">
               <div class="card-body">
-                  <h6 class="card-title"><i class='bx bx-user'></i> Utilisateurs</h6>
-                  <p class="card-text text-warning"></p>
+                <i class="bx bx-file text-warning" style="font-size: 25px; color: blue; margin-right: 5px;"></i> Utilisateurs </h6>
+                  <p class="card-text text-warning text-center" style="font-size: 32px; color: blue; font-weight: bold;">
               </div>
           </div>
       </div>

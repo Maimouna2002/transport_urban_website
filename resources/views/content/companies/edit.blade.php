@@ -39,6 +39,24 @@
                                 <input type="text" class="form-control" id="contact" name="contact" value="{{ $company->contact }}" required>
                             </div>
 
+                            <div class="form-group">
+                              <label for="itinerary_id">Itinéraires :</label>
+                              <select name="itinerary_id[]" id="itinerary_id" class="form-control" multiple>
+                                  @foreach($itineraries as $itinerary)
+                                      <option value="{{ $itinerary->id }}"
+                                          @if(isset($company) && $company->itineraries->contains($itinerary->id)) selected @endif>
+                                          {{ $itinerary->departure_point }} - {{ $itinerary->arrival_point }}
+                                      </option>
+                                  @endforeach
+                              </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="status">Statut :</label>
+                            <select name="status" id="status" class="form-control" required>
+                                <option value="active">Actif</option>
+                                <option value="inactive">Inactif</option>
+                            </select>
+                        </div>
                             <br>
 
                             <button type="submit" class="btn btn-primary">Mettre à jour</button>
