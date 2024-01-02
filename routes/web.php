@@ -1,22 +1,24 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\dashboard\Analytics;
-
-
+use App\Http\Controllers\authentications\RegisterBasic;
+use App\Http\Controllers\authentications\LoginBasic;
+use App\Http\Controllers\authentications\ForgotPasswordBasic;
 
 $controller_path = 'App\Http\Controllers';
 
-
 // Routes non authentifiées
-Route::get('/auth/login-basic', $controller_path . '\Authentications\LoginBasic@index')->name('login');
-Route::post('/auth/login-basic', $controller_path . '\Authentications\LoginBasic@login')->name('login-post');
+Route::get('/auth/login-basic', [LoginBasic::class, 'index'])->name('login');
+Route::post('/auth/login-basic', [LoginBasic::class, 'login'])->name('login-post');
 
-// authentication
-Route::get('/auth/register-basic', $controller_path . '\Authentications\RegisterBasic@register')->name('register-post');
-Route::get('/auth/forgot-password-basic', $controller_path . '\Authentications\ForgotPasswordBasic@index')->name('auth-reset-password-basic');
+Route::get('/auth/register-basic', [RegisterBasic::class, 'register'])->name('register');
+Route::post('/auth/register-basic', $controller_path . '\Authentications\RegisterBasic@processRegistration')->name('register-post');
+
+Route::get('/auth/forgot-password-basic', [ForgotPasswordBasic::class, 'index'])->name('auth-reset-password-basic');
 
 // Page d'accueil
-Route::redirect('/', '/auth/login-basic'); // Redirige vers la page de connexion
+Route::redirect('/', '/auth/login-basic');
+// Redirige vers la page de connexion
 
 // Routes authentifiées (requièrent une authentification préalable)
 Route::middleware('auth')->group(function () {
@@ -44,5 +46,4 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('roles', $controller_path . '\Admin\RoleController');
     Route::resource('permissions', $controller_path . '\Admin\PermissionController');
-    Route::resource('users', $controller_path . '\Admin\UserController');
 });

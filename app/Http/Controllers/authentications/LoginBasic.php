@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\authentications;
 
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AuthRequest;
 use Illuminate\Support\Facades\Auth;
@@ -15,34 +16,27 @@ class LoginBasic extends Controller
 
     public function login(AuthRequest $request)
     {
-        $credentials = $request->validated();
+        $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            // Authentification réussie, rediriger vers la page d'accueil
+            // Authentification réussie, connectez l'utilisateur et redirigez-le vers le tableau de bord
             return redirect()->route('dashboard-analytics');
         } else {
-            // Authentification échouée, rediriger vers la page de login avec un message d'erreur
-            return redirect()->back()->withErrors(['error' => 'Invalid credentials']);
+            // Authentification échouée, redirigez vers la page de connexion avec un message d'erreur
+            return redirect()->back()->withErrors(['error' => 'Identifiants invalides']);
         }
     }
 
     public function logout()
     {
         Auth::logout();
-
         return redirect()->route('login');
     }
 
     public function getUsername()
     {
         $user = Auth::user();
-
-        if ($user) {
-            $username = $user->name;
-        } else {
-            $username = null;
-        }
-
+        $username = $user ? $user->name : null;
         return $username;
     }
 }

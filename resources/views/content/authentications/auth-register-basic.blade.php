@@ -1,6 +1,6 @@
 @extends('layouts.blankLayout')
 
-@section('title', 'Register Basic - Pages')
+@section('title', 'Inscription de base - Pages')
 
 @section('page-style')
     <!-- Page -->
@@ -12,7 +12,7 @@
         <div class="authentication-wrapper authentication-basic container-p-y">
             <div class="authentication-inner">
 
-                <!-- Register Card -->
+                <!-- Formulaire d'Inscription -->
                 <div class="card">
                     <div class="card-body">
                         <!-- Logo -->
@@ -23,21 +23,21 @@
                             </a>
                         </div>
                         <!-- /Logo -->
-                        <h4 class="mb-2">Adventure starts here 🚀</h4>
-                        <p class="mb-4">Make your app management easy and fun!</p>
+                        <h4 class="mb-2">L'aventure commence ici 🚀</h4>
+                        <p class="mb-4">Simplifiez et amusez-vous dans la gestion de votre application !</p>
 
-                        <form id="formAuthentication" class="mb-3" action="{{ route('register-post') }}" method="POST">
+                        <form id="formInscription" class="mb-3" action="{{ route('register-post') }}" method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" autofocus>
+                                <label for="username" class="form-label">Nom d'utilisateur</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" autofocus>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email">
+                                <label for="email" class="form-label">Adresse Email</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Entrez votre adresse email">
                             </div>
                             <div class="mb-3 form-password-toggle">
-                                <label class="form-label" for="password">Password</label>
+                                <label class="form-label" for="password">Mot de passe</label>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
@@ -46,28 +46,28 @@
 
                             <div class="mb-3">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms">
+                                    <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" required>
                                     <label class="form-check-label" for="terms-conditions">
-                                        I agree to
-                                        <a href="javascript:void(0);">privacy policy & terms</a>
+                                        J'accepte les
+                                        <a href="javascript:void(0);">politiques de confidentialité et les termes</a>
                                     </label>
                                 </div>
                             </div>
                             <button class="btn btn-primary d-grid w-100">
-                                Sign up
+                                S'inscrire
                             </button>
                         </form>
 
                         <p class="text-center">
-                            <span>Already have an account?</span>
+                            <span>Vous avez déjà un compte ?</span>
                             <a href="{{ route('login') }}">
-                                <span>Sign in instead</span>
+                                <span>Connectez-vous plutôt</span>
                             </a>
                         </p>
                     </div>
                 </div>
             </div>
-            <!-- Register Card -->
+            <!-- Formulaire d'Inscription -->
         </div>
     </div>
 @endsection
